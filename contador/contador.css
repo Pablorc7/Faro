@@ -29,6 +29,7 @@ body {
 .container_contador{
     transition: 1.9s;
 }
+
 .contador {
     display: flex;
     justify-content: center;
