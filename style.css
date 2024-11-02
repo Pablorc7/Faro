@@ -1,0 +1,197 @@
+@import url("https://fonts.cdnfonts.com/css/more-sugar");
+@import url('https://fonts.cdnfonts.com/css/beautiful-barbies');
+
+body {
+    background-image: urL("fondofaro1.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+
+    height: 100vh;
+    margin: 0;
+    background-color: #001d3d;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/*?MENSAJE DE CADA ESTRELLA*/
+.mensaje {
+    margin-left:60px;
+    margin-bottom: 70px;
+    position:absolute;
+    bottom:40px;
+    font-family: 'Beautiful Barbies', sans-serif;
+}
+
+.mensaje p{color:transparent}
+.mensaje span {
+    border-radius:10px;
+    white-space: nowrap;
+    padding: 15px 30px;
+    display: inline-block; /* Permite que el elemento se ajuste al contenido */
+    font-size:2.3vw;
+    color: transparent;
+}
+
+.mensaje span:hover {cursor:default;}
+.mensaje.activado span{
+    /*background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(128, 128, 128, 0.3));
+    backdrop-filter: blur(5px);*/
+    background-color: #fdfef0;
+    border: 2px solid rgba(156, 11, 41, 1);;
+    border-radius: 15px;
+    animation: aparecer 0.8s forwards; 
+}
+
+@keyframes aparecer {
+    0% {width:10px; opacity:0.2;}
+    100% {width: 100%; opacity:1;}
+}
+
+.mensaje.activado p {
+    width: 45px; /* Ajusta el tamaño */
+    height: 45px; /* Ajusta el tamaño */
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 50%;
+    background-color: rgba(156, 11, 41, 1);;
+    color: #fdfef0;
+    font-size: 1.8vw;
+    position: absolute;
+    bottom: 40px;
+    left: 5px;
+}
+
+.mensaje.complete span{
+    animation: aparecer_texto 1.2s; 
+    color: rgba(156, 11, 41, 1);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transition: transform 0.5s
+}
+
+
+@keyframes aparecer_texto {
+    0% {color:transparent; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0);}
+    100% {color: rgba(156, 11, 41, 1); text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);}
+}
+
+.mensaje.complete span:hover {
+    transform: scale(1.15) translate(10%, -10%);
+    transition: transform 0.5s; 
+}
+
+
+/*?ESTRELLA*/
+.estrella::after {
+    content: '';
+    position: absolute;
+    top: -15px; /* Ajusta este valor según sea necesario */
+    left: -15px; /* Ajusta este valor según sea necesario */
+    width: 45px; /* Aumenta este valor para mayor área de clic */
+    height: 45px; /* Aumenta este valor para mayor área de clic */
+    border-radius: 50%;
+    background-color: transparent; /* Sin color, solo el área de clic */
+}
+
+.estrella {
+    position: absolute;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: #bbdffd;
+    opacity: 0.15;
+    box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.35);
+    transition: transform 0.6s ease;
+}
+
+.estrella.clicked {
+    transform: scale(1.2); /* Aumenta el tamaño al hacer clic */
+    background-color: c7e5fe; /* Color al hacer clic */
+    opacity: 1;
+    animation: brillar 1.5s infinite alternate; /* Animación de brillo */
+}
+
+/* Animación de brillo para las estrellas*/
+@keyframes brillar {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+        box-shadow: 0px 0px 35px 20px rgba(187, 223 ,253, 0.4);
+
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.3);
+        box-shadow: 0px 0px 40px 20px rgba(187, 223 ,253, 0.8);
+
+    }
+}
+
+
+/*?Faro*/
+.faro {
+    position: absolute;
+    transition: transform 0.3s ease;
+    z-index:1;
+    width: 42.5px;
+    top: 273px;
+    height: 24px;
+    right:20.2%;
+    transform: translate(-50%, 50%);
+    border-radius: 8px;
+}
+
+/*? Efecto de pulsación */
+.faro.activado { animation: iluminarse 1.5s infinite alternate;}
+
+.faro.activado:hover { cursor: pointer;}
+
+/* Efecto de pulsación para el sol */
+@keyframes iluminarse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* Resplandor inicial */
+    }
+    100% {
+        box-shadow: 10px 10px 200px 100px rgba(255, 215, 0, 0.9); /* Proyección de luz hacia la izquierda */
+    }
+}
+
+
+/* Nuevas posiciones para las estrellas, separadas y máximo al 55% */
+.estrella:nth-child(1) { top: 7%; left: 6%; }
+.estrella:nth-child(2) { top: 10%; left: 30%; }
+.estrella:nth-child(3) { top: 5%; left: 45%; }
+.estrella:nth-child(4) { top: 35%; left: 68%; }
+.estrella:nth-child(5) { top: 35%; left: 85%; }
+.estrella:nth-child(6) { top: 27%; left: 23%; }
+.estrella:nth-child(7) { top: 32%; left: 38%; }
+.estrella:nth-child(8) { top: 28%; left: 55%; }
+.estrella:nth-child(9) { top: 52%; left: 10%; }
+.estrella:nth-child(10) { top: 43%; left: 95%; }
+.estrella:nth-child(11) { top: 52%; left: 35%; }
+.estrella:nth-child(12) { top: 52%; left: 65%; }
+.estrella:nth-child(13) { top: 49%; left: 50%; }
+.estrella:nth-child(14) { top: 30%; left: 5%; }
+.estrella:nth-child(15) { top: 7%; left: 80%; }
+.estrella:nth-child(16) { top: 47%; left: 24%; }
+.estrella:nth-child(17) { top: 18%; left: 92%; }
+.estrella:nth-child(18) { top: 9%; left: 58%; }
+.estrella:nth-child(19) { top: 15%; left: 15%; }
+.estrella:nth-child(20) { top: 14%; left: 70%; }
+
+
+/*?Contador*/
+.contador {
+    opacity: 0.1;
+    color: white;
+    font-family: "More Sugar", sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    position: absolute;
+    bottom: 30px;
+    margin-left: 60px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos Finales</title>
+    <style>
+        /* Configuración básica del estilo */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Evita el desplazamiento */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+       .credits {
+            width: 100%;
+            text-align: center;
+            transform: translateY(100%); /* Inicia fuera de la vista */
+            animation: scrollCredits 30s linear forwards;
+        }
+
+        /* Keyframes para animar los créditos */
+        @keyframes scrollCredits {
+            0% {
+                transform: translateY(65vh);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="credits-container">
+        <div class="credits">
+            <h2>Créditos</h2>
+            <p>Director: John Doe</p>
+            <p>Productor: Jane Smith</p>
+            <p>Guionista: Alan Smithee</p>
+            <p>Actor Principal: Chris Lee</p>
+            <p>Actriz Principal: Emily Blunt</p>
+            <p>Director de Fotografía: Roberto Rossi</p>
+            <p>Música Original: Sofia Wang</p>
+            
+            <!-- Añade más líneas según sea necesario -->
+        </div>
+    </div>
+</body>
+</html>
