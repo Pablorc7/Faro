@@ -16,17 +16,14 @@ const sound_icon = sound_icons[0]; // Cambia esto para acceder al primer element
 
 // Evento para manejar el clic en la imagen
 sound_icon.addEventListener('click', () => {
-    isMuted = isMuted === true ? false : true;
+    isMuted = false;
 
-    if (!isMuted) {
-        fondo.play(); // Reproduce el audio
-        sound_icon.src = 'sound.png'; // Cambia la imagen a 'muted.png'
-    } 
-    else {
-        fondo.pause(); // Pausa el audio
-        sound_icon.src = 'muted.png'; // Cambia la imagen a 'sound.png'
-    }
+    fondo.play(); // Reproduce el audio
+    sound_icon.src = 'sound.png'; // Cambia la imagen a 'muted.png'
+    sound_icon.style.opacity = "0"; // Cambia la opacidad a 0 para desvanecer
 
+    let contenedor_contador = document.querySelector(".container_contador");
+    contenedor_contador.style.filter = "none"; 
 });
 
 
