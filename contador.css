@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+body {
+    margin: 0;
+    background-color: #18171c;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+/*? BOTON SONIDO*/
+.sound {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    width: 300px;
+    top: 30vh;
+    left: 42vw;
+    opacity: 0.6;
+    transition: opacity 0.7s ease, transform 0.3s ease; 
+    z-index: 1;
+}
+
+.sound:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+/*? CONTADOR*/
+.container_contador{
+    transition: 1.9s;
+}
+.contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-left: 7vw;
+}
+
+.columna span {
+    font-weight: 900;
+    color: #323aa6;
+    font-size: 7vw;
+}
+
+.columna p{
+    margin: 0;
+    opacity: 0.4;
+    font-size: 25px;
+    color: #939393;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section > :nth-child(1){
+    margin-right: 7vw;
+}
+section > :nth-child(2), section > :nth-child(3), section > :nth-child(4) {
+    /* Estilos que deseas aplicar a los hijos 2, 3 y 4 */
+    padding-left: 7vw;
+    margin-right: 7vw;
+    border-left: 3px solid #939393;
+    color: #333; /* Cambiar el color del texto */
+}
+
+
+/*? BOTON PARA CONTINUAR*/
+.continuar {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;     /* Mueve el contenedor a la mitad del ancho del viewport */
+    transform: translateX(-50%); /* Ajusta para centrar completamente */
+}
+
+.continuar button {
+    margin: 0;
+    padding: 15px 35px;
+    cursor: pointer;
+
+    background-color: #323aa6;
+    border: none;
+    border-radius: 15px;
+    color: #939393;
+    font-size: 3vw;
+    font-weight: 600;
+    transition: 0.25s;
+    animation: aumentar 0.8s infinite alternate;
+}
+
+@keyframes aumentar {
+    0% { transform: scale(1); } /* Usar 'transform: scale()' */
+    100% { transform: scale(1.2); } /* Usar 'transform: scale()' */
+}
+
+.continuar button:hover {
+    box-shadow: 0 0 40px rgba(29, 48, 255, 0.4);
+    transform: scale(1.5);
+}
